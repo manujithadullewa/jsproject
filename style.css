@@ -1,0 +1,104 @@
+.header {
+  font-size: 200%;
+  font-weight: 100;
+  color: ff6f00;
+  font-family: system-ui, sans-serif;
+}
+
+.DSaA {
+  margin: 0px 10vh;
+  padding: 0px;
+  display: grid;
+  grid-template-rows: repeat(3, minmax(240px, 0.1fr));
+  align-items: center;
+  text-align: center;
+}
+
+.learn {
+  margin: 10px;
+  padding: 10px;
+  background: #ffffff;
+  color: #ff6f00;
+  border: solid 2px #ff6f00;
+  border-radius: 5px;
+  transition: background 1s;
+  font-family: system-ui, sans-serif
+}
+
+.learn:hover {
+  background: #ff6f00;
+  color: white;
+  border: solid 3px #ff6f00;
+  border-radius: 5px;
+  border: solid 1px #ff6f00;
+  transition: background 1s;
+}
+
+.gendata code {
+  border: solid 1px black;
+  color: white;
+  padding: 3px;
+  border-radius: 2px;
+  background: grey;
+}
+
+.gendata .success {
+  border: solid 1px black;
+  color: white;
+  padding: 3px;
+  border-radius: 2px;
+  background: green;
+  transition: background 4s;
+}
+
+.gendata .failed {
+  border: solid 1px black;
+  color: white;
+  padding: 3px;
+  border-radius: 2px;
+  background: red;
+  font-weight: bold;
+  transition: background 4s;
+}
+
+.gendata .joke {
+  font-family: system-ui, sans-serif;
+  font-size: 15px;
+  text-align: center;
+  font-weight: bold;
+  transition: font-weight 4s;
+}
+
+.gendata .info {
+  font-family: system-ui, sans-serif;
+  font-size: 15px;
+  text-align: center;
+  font-weight: bold;
+  font-weight: bold;
+  transition: font-weight 4s;
+}
+
+.gendata .error {
+  font-family: system-ui, sans-serif;
+  font-size: 15px;
+  text-align: center;
+  color: red;
+  font-weight: bold;
+  transition: font-weight 4s;
+}
+
+img {
+  opacity: 1;
+  transition: opacity 10s;
+  width: 80%;
+}
+
+
+@media screen and (min-width: 800px) {
+  .header {
+    font-size: 50px
+  }
+  img {
+    width: 35%
+  }
+}

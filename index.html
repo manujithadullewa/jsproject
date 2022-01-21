@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=1, initial-scale=1.0" />
+    <title>Data structures and algorithms | OOP and Functional paradigms</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="DSaA">
+      <h1 class="header">Data structures and algorithms</h1>
+      <div class="gendata">
+        <img src="./favicon.svg" alt="data structures and algorithms" />
+      </div>
+      <button class="learn">Load</button>
+    </div>
+  </body>
+  <script defer src="./main.js"></script>
+  <script>
+    const btn = document.querySelector(".learn");
+    const dataC = document.querySelector(".gendata");
+    btn.onmouseover = () => {};
+    btn.onmouseleave = () => {};
+
+    btn.onclick = () => {
+      btn.innerText = `Loading...`;
+      fetch(`https://api.chucknorris.io/jokes/random`)
+        .then((res) => {
+          return Promise.resolve({ status: res.status, data: res.json() });
+        })
+        .then((data) => {
+          data.data.then((d) => {
+            dataC.innerHTML = `
+          <code>${data.status}</code>
+          <p class="joke">${d.value}</p>
+        `;
+          });
+        })
+        .catch((error) => {
+          dataC.innerHTML = `
+        <p class="error">${error}</p>
+      `;
+        })
+        .finally(() => {
+          btn.innerText = `Load`;
+        });
+    };
+  </script>
+</html>
